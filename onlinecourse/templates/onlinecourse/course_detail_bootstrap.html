@@ -42,7 +42,10 @@
     <!-- Page content -->
     <div class="container-fluid">
             <h2>{{ course.name }}</h2>
-            <div class="card-columns-vertical">
+        </br> 
+        <a href="#lessons" class="btn btn-primary btn-block" data-toggle="collapse">Lessons</a>
+            <div id="lessons" class="collapse">
+            <!-- <div class="card-columns-vertical"> -->
                 {% for lesson in course.lesson_set.all %}
                     <div class="card mt-1">
                         <div class="card-header"><h5>Lesson {{lesson.order|add:1}}: {{lesson.title}}</h5></div>
@@ -59,8 +62,7 @@
             A collapse example here: -->
             {% if user.is_authenticated %}
         </br>      
-        <!-- <a href="#exam" class="btn btn-primary" data-toggle="collapse">Take Exam</a> -->
-        <a href="#exam" class="btn btn-success btn-block" data-toggle="collapse">Take Exam</a>
+        <a href="#exam" class="btn btn-primary btn-block" data-toggle="collapse">Exam</a>
             <div id="exam" class="collapse">
             
 
